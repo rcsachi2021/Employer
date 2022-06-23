@@ -16,10 +16,8 @@ use App\Http\Controllers\JobController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [LoginController::class, 'login'])->name('login');
 Route::get('/employer/signup', [EmployerController::class, 'signUp'])->name('signup');
 Route::post('/employer/save', [EmployerController::class, 'saveEmployer'])->name('save.employer');
 Route::get('/employer/login', [LoginController::class, 'login'])->name('login');
