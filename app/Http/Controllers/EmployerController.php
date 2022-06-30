@@ -35,7 +35,7 @@ class EmployerController extends Controller
 
        if($employer)
        {
-            return redirect()->back()->with('message', 'Employer registration successfull');
+            return redirect()->route('login')->with('message', 'Employer registration successfull');
        }
     }
 }

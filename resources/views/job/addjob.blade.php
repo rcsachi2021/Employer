@@ -17,19 +17,19 @@
         <div class="col-md-4">
                 <div class="form-group">
                     <label for="jobimage">Job Image <span class="text-danger">*</span></label>
-                    <input type="file" name="image" id="image" class="form-control">
+                    <input type="file" name="image" id="image" class="form-control" required>
                     @error('image')<span class="text-danger">{{$message}}</span>@enderror
                 </div>                
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="jobname">Job Name <span class="text-danger">*</span></label>
-                    <input type="text" name="job_name" id="job_name" value="{{old('job_name')}}" class="form-control">
+                    <input type="text" name="job_name" id="job_name" value="{{old('job_name')}}" class="form-control" required>
                     @error('job_name')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="mobile">Emirates <span class="text-danger">*</span></label>
-                    <select name="emirates" id="emirates" class="form-control">
+                    <select name="emirates" id="emirates" class="form-control" required>
                         <option value="">Select</option>
                         <option value="Abu Dhabi">Abu Dhabi</option>
                         <option value="Ajman">Ajman</option>
@@ -43,34 +43,34 @@
                 </div>
                 <div class="form-group">
                     <label for="companyname">Company Name <span class="text-danger">*</span></label>
-                    <input type="text" name="company_name" id="company_name" value="{{old('company_name')}}" class="form-control">
+                    <input type="text" name="company_name" id="company_name" value="{{old('company_name')}}" class="form-control" required>
                     @error('company_name')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="fromdate">From Date<span class="text-danger">*</span></label>
-                    <input type="text" name="from_date" id="from_date" value="{{old('from_date')}}" class="form-control" placeholder="yyyy-mm-dd">
+                    <input type="text" name="from_date" id="from_date" value="{{old('from_date')}}" class="form-control" placeholder="yyyy-mm-dd" required>
                     @error('from_date')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="tilldate">Till Date<span class="text-danger">*</span></label>
-                    <input type="text" name="till_date" id="till_date" value="{{old('till_date')}}" class="form-control" placeholder="yyyy-mm-dd">
+                    <input type="text" name="till_date" id="till_date" value="{{old('till_date')}}" class="form-control" placeholder="yyyy-mm-dd" required>
                     @error('till_date')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="email">Email To <span class="text-danger">*</span></label>
-                    <input type="text" name="email_to" id="email_to" value="{{old('email_to')}}" class="form-control">
+                    <input type="text" name="email_to" id="email_to" value="{{old('email_to')}}" class="form-control" required>
                     @error('email_to')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="location">Location <span class="text-danger">*</span></label>
-                    <input type="text" name="location" id="location" value="{{old('location')}}" class="form-control">
+                    <input type="text" name="location" id="location" value="{{old('location')}}" class="form-control" required>
                     @error('password')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="jobtype">Job Type <span class="text-danger">*</span></label>
-                    <select name="job_type" id="job_type" class="form-control">
+                    <select name="job_type" id="job_type" class="form-control" required>
                         <option value="">Select</option>
                         <option value="Finance">Finance</option>
                         <option value="Technology">Technology</option>
@@ -104,23 +104,7 @@
    $(document).ready(function(){
     
    })
-   $("#employer-registration").validate({
-    rules: {
-    email: {
-      required: true,
-      email: true
-    },
-    mobile: {
-      required: true,
-      digits: true
-    },
-    password: {
-      required: true,
-      minlength: 6,
-      maxlength: 10
-    }
-  }
-   });
-   $(".error").css('color','red');
+   $("#job-add").validate();
+   
     </script>
     @endsection
