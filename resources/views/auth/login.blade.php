@@ -31,7 +31,7 @@
                 <label class="form-check-label" for="flexCheckDefault">
                     Remember Me
                 </label>
-                </div> <span><a href="#">Forgot password?</a></span>
+                </div> <span><a href="/forget-password">Forgot password?</a></span>
             </div>
             
             <div class="form-group">

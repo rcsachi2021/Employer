@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\ForgetPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,14 @@ Route::get('/employer/login', [LoginController::class, 'login'])->name('login');
 Route::get('/employer/forgotpwd', [LoginController::class, 'forgotpassword'])->name('forgot.password');
 Route::get('/employer/email-verification', [LoginController::class, 'sendVerification'])->name('send.verification');    
 Route::post('/empolyer/processlogin', [LoginController::class, 'processLogin'])->name('process.login');
+
+//Forget password routes
+
+Route::get('/forget-password', [ForgetPasswordController::class, 'getEmail']);
+Route::post('/forget-password', [ForgetPasswordController::class, 'postEmail']);
+
+Route::get('/reset-password/{token}', [ResetPasswordController::class , 'getPassword']);
+Route::post('/reset-password', [ResetPasswordController::class , 'updatePassword']);
 
 Route::group(['middleware' => 'auth_employer'], function(){
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
