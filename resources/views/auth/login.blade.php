@@ -16,9 +16,7 @@
 </div>
         @endif
         <form action="{{route('process.login')}}" method="post" id="employer-login">
-            @csrf
-        
-            
+            @csrf           
             
                 <div class="form-group">
                     <label for="email">Email <span class="text-danger">*</span></label>

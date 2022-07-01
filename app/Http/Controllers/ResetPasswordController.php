@@ -32,7 +32,7 @@ class ResetPasswordController extends Controller
         $employer = Employer::where(['email'=>$request->email])->update(['password'=>Hash::make($request->password)]);
 
         DB::table('password_resets')->where(['email'=>$request->email])->delete();
-        return redirect()->back()->with('message', 'Password rest sucessfully');
+        return redirect()->route('login')->with('message', 'Password reset sucessfully');
 
     }
 }
