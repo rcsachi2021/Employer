@@ -22,7 +22,7 @@ class ForgetPasswordController extends Controller
         ]);
         
         $token = Str::random(64);
-        echo $token;
+        
         DB::table('password_resets')->insert([
             'email' => $request->email,
             'token' => $token,

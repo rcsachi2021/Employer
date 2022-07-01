@@ -48,12 +48,12 @@
                 </div>
                 <div class="form-group">
                     <label for="fromdate">From Date<span class="text-danger">*</span></label>
-                    <input type="text" name="from_date" id="from_date" value="{{old('from_date')}}" class="form-control" placeholder="yyyy-mm-dd" required>
+                    <input type="text" name="from_date" id="datepicker_from" value="{{old('from_date')}}" class="form-control" placeholder="yyyy-mm-dd" required>
                     @error('from_date')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
                 <div class="form-group">
                     <label for="tilldate">Till Date<span class="text-danger">*</span></label>
-                    <input type="text" name="till_date" id="till_date" value="{{old('till_date')}}" class="form-control" placeholder="yyyy-mm-dd" required>
+                    <input type="text" name="till_date" id="datepicker_to" value="{{old('till_date')}}" class="form-control" placeholder="yyyy-mm-dd" required>
                     @error('till_date')<span class="text-danger">{{$message}}</span>@enderror
                 </div>
             </div>
@@ -107,4 +107,11 @@
    $("#job-add").validate();
    
     </script>
+    <script>
+  $( function() {
+    $( "#datepicker_from, #datepicker_to" ).datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+  } );
+  </script>
     @endsection
